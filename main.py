@@ -7,7 +7,7 @@ connection = obd.OBD()
 
 # Load callsign from disk. This is important when using amateur frequencies.
 try:
-    callsign = open('callsign.txt', 'r')
+    callsign = open('callsign.txt', 'r').read()
 except FileNotFoundError:
     callsign = "N/A"
 
