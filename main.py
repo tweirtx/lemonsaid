@@ -10,10 +10,11 @@ try:
     callsign = open('callsign.txt', 'r').read()
 except FileNotFoundError:
     callsign = "N/A"
+    print("Callsign not set. Depending on data transfer method, this may be illegal!")
 
 while True:
     # Read parameters from the OBDII system.
-    speed = connection.query(obd.commands.SPEED).value
+    speed = connection.query(obd.commands.SPEED).value.to("mph")
     rpm = connection.query(obd.commands.RPM).value
     throttle_position = connection.query(obd.commands.RELATIVE_THROTTLE_POS).value  # Subject to change with future testing.
     coolant_temp = connection.query(obd.commands.COOLANT_TEMP).value
