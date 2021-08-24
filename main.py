@@ -13,11 +13,11 @@ except FileNotFoundError:
 
 while True:
     # Read parameters from the OBDII system.
-    speed = connection.query(obd.commands.SPEED)
-    rpm = connection.query(obd.commands.RPM)
-    throttle_position = connection.query(obd.commands.RELATIVE_THROTTLE_POS)  # Subject to change with future testing.
-    coolant_temp = connection.query(obd.commands.COOLANT_TEMP)
-    fuel_level = connection.query(obd.commands.FUEL_LEVEL)
+    speed = connection.query(obd.commands.SPEED).value
+    rpm = connection.query(obd.commands.RPM).value
+    throttle_position = connection.query(obd.commands.RELATIVE_THROTTLE_POS).value  # Subject to change with future testing.
+    coolant_temp = connection.query(obd.commands.COOLANT_TEMP).value
+    fuel_level = connection.query(obd.commands.FUEL_LEVEL).value
 
     # Read tire pressures with software defined radio. TODO
     fl_psi = 30.0  # Testing value
