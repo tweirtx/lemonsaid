@@ -18,7 +18,7 @@ while True:
     # speed = connection.query(obd.commands.SPEED).value.to("mph") # TODO fix
     speed = 0
     rpm = connection.query(obd.commands.RPM).value
-    throttle_position = connection.query(obd.commands.RELATIVE_THROTTLE_POS).value  # Subject to change with future testing. TODO determine correct
+    throttle_position = connection.query(obd.commands.THROTTLE_POS).value  
     coolant_temp = connection.query(obd.commands.COOLANT_TEMP).value
     fuel_level = connection.query(obd.commands.FUEL_LEVEL).value
 
